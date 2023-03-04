@@ -78,7 +78,7 @@
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative bg-[url('@assets/example.png')]">
     <div v-if="loading">
       <div class="hero min-h-screen bg-base-200">
         <div class="hero-content text-center">
@@ -101,7 +101,7 @@
     </div>
     <div
       v-else
-      class="grid grid-cols-4 justify-items-center gap-10"
+      class="grid justify-items-center gap-10 p-10 md:grid-cols-3 xl:grid-cols-4 2xl:grid-rows-5"
     >
       <PokemonCard
         v-for="pokemon in refinedPokemonList"
