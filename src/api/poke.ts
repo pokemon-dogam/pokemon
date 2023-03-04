@@ -1,11 +1,11 @@
-import {endpoints} from "@/api/endpoints";
-import axios from "axios";
+import { endpoints } from '@/api/endpoints';
+import axios from 'axios';
 
 export const requestPokeApi = () => {
-    const url = endpoints.pokeApi.list;
+  const url = endpoints.pokeApi.list;
 
-    return axios.get(url);
-}
+  return axios.get(url);
+};
 
 /**
  * 포켓몬 상세 API
@@ -19,10 +19,10 @@ export const requestPokeApi = () => {
  * */
 
 export const requestDetailPokeData = (number: string) => {
-    const url = `${endpoints.pokeApi.detail}/${number}`;
+  const url = `${endpoints.pokeApi.detail}/${number}`;
 
-    return axios.get(url);
-}
+  return axios.get(url);
+};
 
 /**
  * 어빌리티 상세 API
@@ -30,7 +30,6 @@ export const requestDetailPokeData = (number: string) => {
  * 기술 이름 : names : []
  *
  * */
-
 
 /**
  * 포켓몬 종에 대한 API
@@ -42,7 +41,7 @@ export const requestDetailPokeData = (number: string) => {
  *
  * */
 export const requestPokemonSpeciesData = (number: string) => {
-    const url = `${endpoints.pokeApi.species}/${number}`;
+  const url = `${endpoints.pokeApi.species}/${number}`;
 
-    return axios.get(url);
-}
+  return axios.get(url);
+};

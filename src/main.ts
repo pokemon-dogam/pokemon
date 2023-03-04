@@ -1,14 +1,11 @@
-import { createHead } from '@vueuse/head'
-import { createPinia } from 'pinia'
-import { createApp } from 'vue'
-import App from './App.vue'
-import './assets/index.postcss'
-import router from './router'
+import { createHead } from '@vueuse/head';
+import { createPinia } from 'pinia';
+import { createApp } from 'vue';
+import App from './App.vue';
+import './assets/index.postcss';
+import router from './router';
 
-const head = createHead()
-const app = createApp(App)
+const head = createHead();
+const app = createApp(App);
 
-app.use(createPinia())
-    .use(router)
-    .use(head)
-    .mount('#app')
+app.use(createPinia()).use(router).use(head).mount('#app');

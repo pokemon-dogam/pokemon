@@ -1,8 +1,8 @@
 interface abilitiesType {
-    name: string,
+  name: string;
 }
 export interface PokemonListType {
-    index: string;
-    name: string;
-    abilities: abilitiesType[];
+  index: string;
+  name: string;
+  abilities: abilitiesType[];
 }

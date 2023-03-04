@@ -1,7 +1,6 @@
 // const plugin = require('tailwindcss/plugin')
 // const defaultTheme = require('tailwindcss/defaultTheme')
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./dist/**/*.html', './src/**/*.{ts,vue}', './*.html'],
   // theme: {
@@ -17,7 +16,7 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
-    require("daisyui"),
+    require('daisyui'),
     // plugin(function ({ addVariant, e, postcss }) {
     //   addVariant('firefox', ({ container, separator }) => {
     //     const isFirefoxRule = postcss.atRule({
@@ -39,7 +38,7 @@ module.exports = {
     utils: true,
     logs: true,
     rtl: false,
-    prefix: "",
-    darkTheme: 'cupcake'
+    prefix: '',
+    darkTheme: 'cupcake',
   },
-}
+};

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "baseUrl": ".",
+    "target": "ESNext",
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
@@ -11,11 +12,23 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
-    "lib": ["esnext", "dom"],
-    "skipLibCheck": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "skipLibCheck": false,
     "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@router/*": ["src/router/*"],
+      "@components/*": ["src/components/*"],
+      "@containers/*": ["src/containers/*"],
+      "@views/*": ["src/views/*"],
+      "@assets/*": ["src/assets/*"],
+      "@utils/*": ["src/utils/*"],
+      "@styles/*": ["src/styles/*"],
+      "@common/*": ["src/common/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@apis/*": ["src/apis/*"],
+      "@store/*": ["src/store/*"],
     }
   },
   "include": [
@@ -24,7 +37,9 @@
     "tests/**/*.test.ts",
     "src/**/*.d.ts",
     "src/**/*.vue",
-    "./components.d.ts"
+    "./src/**/*.vue",
+    "./components.d.ts",
+    "./src"
   ],
   "exclude": ["node_modules", "dist", "public"],
   "references": [{ "path": "./tsconfig.node.json" }]
