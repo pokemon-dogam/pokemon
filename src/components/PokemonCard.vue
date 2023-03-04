@@ -8,10 +8,7 @@
 </script>
 
 <template>
-  <div class="card w-96 bg-base-100 shadow-xl">
-    <!--        <li v-for="(type, typeIndex) in pokemonTypes" :key="typeIndex">-->
-    <!--            <PokemonType :typeImage="type." />-->
-    <!--        </li>-->
+  <div class="card w-96 bg-yellow-50 shadow-2xl">
     <figure>
       <img
         :src="refinedPokemonList.image"
@@ -24,17 +21,15 @@
       <!--            <p>능력</p>-->
       <!--            <p>{{ pokemonAbility }}</p>-->
       <div>
-        <div>HP: {{ refinedPokemonList.stats.HP }}</div>
-        <div>ATTACK: {{ refinedPokemonList.stats.ATTACK }}</div>
-        <div>DEFENSE: {{ refinedPokemonList.stats.DEFENSE }}</div>
-        <div>SPECIAL_ATTACK: {{ refinedPokemonList.stats.SPECIAL_ATTACK }}</div>
-        <div>
-          SPECIAL_DEFENSE: {{ refinedPokemonList.stats.SPECIAL_DEFENSE }}
-        </div>
-        <div>SPEED: {{ refinedPokemonList.stats.SPEED }}</div>
+        <div>체력 : {{ refinedPokemonList.stats.HP }}</div>
+        <div>공격력 : {{ refinedPokemonList.stats.ATTACK }}</div>
+        <div>방어력 : {{ refinedPokemonList.stats.DEFENSE }}</div>
+        <div>특수 공격 : {{ refinedPokemonList.stats.SPECIAL_ATTACK }}</div>
+        <div>특수 방어: {{ refinedPokemonList.stats.SPECIAL_DEFENSE }}</div>
+        <div>속도 : {{ refinedPokemonList.stats.SPEED }}</div>
       </div>
       <div class="card-actions justify-end">
-        <div class="badge-outline badge">상세설명</div>
+        <div class="btn-outline btn-secondary btn tracking-wide">상세설명</div>
       </div>
     </div>
   </div>

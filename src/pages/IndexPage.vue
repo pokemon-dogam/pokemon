@@ -71,21 +71,37 @@
   const getPokemonInformation = async () => {
     await getPokemonAllList();
     await setPokemonDetail();
-    loading.value = false;
+    // loading.value = false;
   };
 
   getPokemonInformation();
 </script>
 
 <template>
-  <div class="relative py-8">
-    <button
-      v-if="loading"
-      class="loading btn-square btn flex"
-    />
+  <div class="relative">
+    <div v-if="loading">
+      <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Hello there</h1>
+            <p class="py-6">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
+            </p>
+            <button
+              class="btn-primary btn"
+              @click="() => (loading = !loading)"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       v-else
-      class="grid grid-cols-3 justify-items-center gap-10"
+      class="grid grid-cols-4 justify-items-center gap-10"
     >
       <PokemonCard
         v-for="pokemon in refinedPokemonList"
