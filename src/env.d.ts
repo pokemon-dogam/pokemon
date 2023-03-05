@@ -1,6 +1,8 @@
 /// <reference types="vite/client" />
 
 declare module '*.vue' {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   import { DefineComponent } from 'vue';
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
   const component: DefineComponent<any, {}, any>;
@@ -10,6 +12,8 @@ declare module '*.vue' {
 interface ImportMetaEnv extends Readonly<Record<string, string>> {
   // Only string type here to avoid hard to debug cast problems in your components!
   readonly VITE_APP_VERSION: string;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   readonly VITE_APP_BUILD_EPOCH?: string;
 }
 interface ImportMeta {
