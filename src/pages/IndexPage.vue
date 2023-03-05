@@ -71,31 +71,38 @@
   const getPokemonInformation = async () => {
     await getPokemonAllList();
     await setPokemonDetail();
-    // loading.value = false;
+    loading.value = false;
   };
 
   getPokemonInformation();
+
+  const isLandingPage = ref<boolean>(true);
+  const exitLandingPage = () => (isLandingPage.value = !isLandingPage.value);
 </script>
 
 <template>
   <div class="relative bg-[url('@assets/example.png')]">
-    <div v-if="loading">
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content text-center">
-          <div class="max-w-md">
-            <h1 class="text-5xl font-bold">Pokedex</h1>
-            <p class="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button
-              class="btn-primary btn"
-              @click="() => (loading = !loading)"
-            >
-              Get Started
-            </button>
-          </div>
+    <div v-if="isLandingPage">
+      <div class="hero min-h-screen">
+        <div class="hero-content flex-col">
+          <img
+            class="w-2/3"
+            src="@assets/logo/pokelogo.png"
+            alt="pokelogo"
+          />
+          <button
+            v-if="loading"
+            class="loading btn"
+          >
+            loading
+          </button>
+          <button
+            v-else
+            class="btn"
+            @click="exitLandingPage"
+          >
+            enter
+          </button>
         </div>
       </div>
     </div>
