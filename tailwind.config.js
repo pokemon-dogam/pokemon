@@ -1,44 +1,23 @@
-// const plugin = require('tailwindcss/plugin')
-// const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
   content: ['./dist/**/*.html', './src/**/*.{ts,vue}', './*.html'],
-  // theme: {
-  //   extend: {
-  //     // here's how to extend fonts if needed
-  //     fontFamily: {
-  //       sans: [...defaultTheme.fontFamily.sans],
-  //     },
-  //   },
-  // },
+  theme: {
+    extend: {
+      animation: {
+        fadeIn: 'fadeIn 2s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '50%': { opacity: 1 },
+          '100%': { opacity: 0 },
+        },
+      },
+    },
+  },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
-    require('daisyui'),
-    // plugin(function ({ addVariant, e, postcss }) {
-    //   addVariant('firefox', ({ container, separator }) => {
-    //     const isFirefoxRule = postcss.atRule({
-    //       name: '-moz-document',
-    //       params: 'url-prefix()',
-    //     })
-    //     isFirefoxRule.append(container.nodes)
-    //     container.append(isFirefoxRule)
-    //     isFirefoxRule.walkRules((rule) => {
-    //       rule.selector = `.${e(`firefox${separator}${rule.selector.slice(1)}`)}`
-    //     })
-    //   })
-    // }),
   ],
-  daisyui: {
-    styled: true,
-    themes: true,
-    base: true,
-    utils: true,
-    logs: true,
-    rtl: false,
-    prefix: '',
-    darkTheme: 'cupcake',
-  },
 };

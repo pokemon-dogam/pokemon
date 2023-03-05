@@ -7,6 +7,7 @@
   import { AxiosResponse } from 'axios';
   import { PokemonListType } from '@/interfaces/pokemonList';
   import { RefinedPokemonListType } from '@/interfaces/refiendPokemonType';
+  import { ElMessage } from 'element-plus';
 
   const pokemonAllList = ref<PokemonListType[]>([]);
   const refinedPokemonList = ref<RefinedPokemonListType[]>([]);
@@ -87,10 +88,17 @@
 
   const isLandingPage = ref<boolean>(true);
   const exitLandingPage = () => (isLandingPage.value = !isLandingPage.value);
+
+  const triggerModal = () => {
+    ElMessage({
+      message: '데이터를 불러오는 중입니다.',
+      type: 'warning',
+    });
+  };
 </script>
 
 <template>
-  <div class="relative bg-[url('@assets/pastel-bg.png')]">
+  <div class="relative flex justify-center bg-[url('@assets/pastel-bg.png')]">
     <div v-if="isLandingPage">
       <div class="hero min-h-screen">
         <div class="hero-content flex-col">
@@ -101,7 +109,8 @@
           />
           <button
             v-if="loading"
-            class="loading btn"
+            class="btn"
+            @click="triggerModal"
           >
             loading
           </button>

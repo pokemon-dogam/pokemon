@@ -12,5 +12,6 @@ declare module '@vue/runtime-core' {
     PokemonType: typeof import('./src/components/PokemonType.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ToastMessage: typeof import('./src/components/ToastMessage.vue')['default']
   }
 }
