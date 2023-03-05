@@ -69,8 +69,17 @@
   };
 
   const getPokemonInformation = async () => {
-    await getPokemonAllList();
-    await setPokemonDetail();
+    const isPokemonListExist = localStorage.getItem('pokemonList');
+    if (!isPokemonListExist) {
+      await getPokemonAllList();
+      await setPokemonDetail();
+      localStorage.setItem(
+        'pokemonList',
+        JSON.stringify(refinedPokemonList.value),
+      );
+    } else {
+      refinedPokemonList.value = JSON.parse(isPokemonListExist);
+    }
     loading.value = false;
   };
 
@@ -81,7 +90,7 @@
 </script>
 
 <template>
-  <div class="relative bg-[url('@assets/example.png')]">
+  <div class="relative bg-[url('@assets/pastel-bg.png')]">
     <div v-if="isLandingPage">
       <div class="hero min-h-screen">
         <div class="hero-content flex-col">
